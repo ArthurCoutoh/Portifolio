@@ -1,0 +1,217 @@
+@namespace PortifolioBlazor.Pages.Arthur
+@page "/arthur/contact"
+
+<PageTitle>Contato — Arthur Couto</PageTitle>
+
+<div class="page-content">
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><i class="fas fa-paper-plane"></i> &nbsp; Fale Comigo</span>
+                <h1 class="section-title">Entre em <span>Contato</span></h1>
+                <p class="section-desc">
+                    Tem um projeto, oportunidade ou só quer trocar uma ideia?
+                    Manda mensagem — responderei em breve! 🚀
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Links -->
+                <div class="contact-info reveal">
+                    <h3>Vamos conversar!</h3>
+                    <p>
+                        Estou aberto a novas oportunidades, colaborações e até uma partida de
+                        Brawlhalla! Entre em contato por qualquer um dos canais abaixo.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:athur2075@gmail.com" class="contact-link-item" id="contact-email-link">
+                            <div class="contact-link-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-link-content">
+                                <span>E-mail</span>
+                                <strong>athur2075&#64;gmail.com</strong>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/ArthurCoutoh" target="_blank" class="contact-link-item" id="contact-github-link">
+                            <div class="contact-link-icon" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--text-primary);">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-link-content">
+                                <span>GitHub</span>
+                                <strong>github.com/ArthurCoutoh</strong>
+                            </div>
+                        </a>
+
+                        <div class="contact-link-item" style="cursor:default;" id="contact-school-info">
+                            <div class="contact-link-icon" style="background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.3); color: #c4b5fd;">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="contact-link-content">
+                                <span>Escola</span>
+                                <strong>IFRO — Técnico em Informática</strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-link-item" style="cursor:default;" id="contact-location-info">
+                            <div class="contact-link-icon" style="background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.3); color: var(--color-gold);">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-link-content">
+                                <span>Localização</span>
+                                <strong>Rondônia, Brasil 🇧🇷</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arena Card -->
+                    <div style="margin-top:2rem; padding:1.5rem; background:linear-gradient(135deg, rgba(245,166,35,0.08), rgba(0,212,255,0.08)); border:1px solid rgba(245,166,35,0.2); border-radius:12px;">
+                        <p style="font-family:var(--font-title); font-size:1.1rem; font-weight:700; color:var(--color-gold); margin-bottom:0.5rem;">
+                            ⚔️ "Entre na Arena!"
+                        </p>
+                        <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.7;">
+                            Assim como em Brawlhalla, cada desafio na programação é uma chance de crescer.
+                            Não hesite em entrar em contato — estou sempre pronto para novos desafios!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form reveal" id="contact-form-container">
+                    @if (formSent)
+                    {
+                        <div style="text-align:center; padding:3rem 1rem;">
+                            <div style="font-size:3rem; margin-bottom:1rem;">✅</div>
+                            <h3 style="font-family:var(--font-title); font-size:1.8rem; color:var(--text-primary); margin-bottom:0.5rem;">Mensagem Enviada!</h3>
+                            <p style="color:var(--text-secondary);">Obrigado pelo contato! Responderei em breve.</p>
+                            <button class="btn btn-secondary" style="margin-top:1.5rem;" @onclick="ResetForm" id="form-reset-btn">
+                                <i class="fas fa-redo"></i> Nova Mensagem
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <h3 style="font-family:var(--font-title); font-size:1.4rem; font-weight:700; color:var(--text-primary); margin-bottom:1.5rem;">
+                            <i class="fas fa-message" style="color:var(--color-cyan);"></i> &nbsp; Enviar Mensagem
+                        </h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="form-name">Seu Nome</label>
+                                <input
+                                    id="form-name"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Ex: João Silva"
+                                    @bind="formName" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-email">Seu E-mail</label>
+                                <input
+                                    id="form-email"
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="joao@email.com"
+                                    @bind="formEmail" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="form-subject">Assunto</label>
+                            <input
+                                id="form-subject"
+                                type="text"
+                                class="form-control"
+                                placeholder="Ex: Parceria em projeto, Oportunidade..."
+                                @bind="formSubject" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="form-message">Mensagem</label>
+                            <textarea
+                                id="form-message"
+                                class="form-control"
+                                placeholder="Olá Arthur! Quero conversar sobre..."
+                                @bind="formMessage">
+                            </textarea>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(formError))
+                        {
+                            <div style="padding:0.75rem 1rem; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:8px; color:#fca5a5; font-size:0.88rem; margin-bottom:1rem;">
+                                <i class="fas fa-triangle-exclamation"></i> @formError
+                            </div>
+                        }
+
+                        <button class="btn btn-primary" style="width:100%;" @onclick="SubmitForm" id="form-submit-btn" disabled="@isSubmitting">
+                            @if (isSubmitting)
+                            {
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span>Enviando...</span>
+                            }
+                            else
+                            {
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Enviar Mensagem</span>
+                            }
+                        </button>
+
+                        <p style="font-size:0.78rem; color:var(--text-muted); margin-top:0.75rem; text-align:center;">
+                            <i class="fas fa-lock"></i> Seus dados são protegidos e não serão compartilhados.
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Feito com <span>❤️</span> por Arthur Couto · 2026</p>
+                <div class="footer-links">
+                    <a href="https://github.com/ArthurCoutoh" target="_blank" id="footer-github">GitHub</a>
+                    <a href="mailto:athur2075@gmail.com" id="footer-email">E-mail</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+@code {
+    private string formName = "";
+    private string formEmail = "";
+    private string formSubject = "";
+    private string formMessage = "";
+    private string formError = "";
+    private bool formSent = false;
+    private bool isSubmitting = false;
+
+    private async Task SubmitForm()
+    {
+        formError = "";
+
+        if (string.IsNullOrWhiteSpace(formName))
+        { formError = "Por favor, informe seu nome."; return; }
+
+        if (string.IsNullOrWhiteSpace(formEmail) || !formEmail.Contains('@'))
+        { formError = "Por favor, informe um e-mail válido."; return; }
+
+        if (string.IsNullOrWhiteSpace(formMessage))
+        { formError = "Por favor, escreva uma mensagem."; return; }
+
+        isSubmitting = true;
+        await Task.Delay(1500); // Simula envio
+        isSubmitting = false;
+        formSent = true;
+    }
+
+    private void ResetForm()
+    {
+        formName = formEmail = formSubject = formMessage = formError = "";
+        formSent = false;
+    }
+}

@@ -1,0 +1,71 @@
+@using PortifolioBlazor.Models
+
+<div class="project-card" id="project-@Title.Replace(" ", "-").ToLower()">
+    <div class="project-header">
+        <div class="project-icon">@Icon</div>
+        <span class="project-status @(Status == "completed" ? "status-completed" : "status-progress")">
+            @(Status == "completed" ? "Concluído" : "Em Progresso")
+        </span>
+    </div>
+
+    <div class="project-body">
+        <h3 class="project-title">@Title</h3>
+        <p class="project-desc">@Description</p>
+        <div class="project-tags">
+            @foreach (var tag in Tags)
+            {
+                <span class="project-tag">@tag</span>
+            }
+        </div>
+    </div>
+
+    <div class="project-footer">
+        <div class="project-links">
+            @if (!string.IsNullOrEmpty(GitHubUrl))
+            {
+                <a href="@GitHubUrl" target="_blank" class="project-link link-github" id="github-@Title.Replace(" ","-").ToLower()">
+                    <i class="fab fa-github"></i> Código
+                </a>
+            }
+            else
+            {
+                <span class="project-link link-disabled">
+                    <i class="fab fa-github"></i> Privado
+                </span>
+            }
+
+            @if (!string.IsNullOrEmpty(DemoUrl))
+            {
+                <a href="@DemoUrl" target="_blank" class="project-link link-demo" id="demo-@Title.Replace(" ","-").ToLower()">
+                    <i class="fas fa-external-link-alt"></i> Demo
+                </a>
+            }
+        </div>
+
+        <div class="project-lang">
+            <span class="lang-dot" style="background: @GetLangColor(Language); box-shadow: 0 0 6px @GetLangColor(Language)80;"></span>
+            @Language
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; } = string.Empty;
+    [Parameter] public string Description { get; set; } = string.Empty;
+    [Parameter] public string Icon { get; set; } = "💻";
+    [Parameter] public string Status { get; set; } = "completed";
+    [Parameter] public List<string> Tags { get; set; } = new();
+    [Parameter] public string? GitHubUrl { get; set; }
+    [Parameter] public string? DemoUrl { get; set; }
+    [Parameter] public string Language { get; set; } = "C#";
+
+    private string GetLangColor(string lang) => lang switch
+    {
+        "C#" => "#6d28d9",
+        "Blazor" => "#512BD4",
+        "HTML/CSS" => "#f97316",
+        "JavaScript" => "#eab308",
+        "Python" => "#3b82f6",
+        _ => "#6b7280"
+    };
+}

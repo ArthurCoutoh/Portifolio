@@ -1,0 +1,135 @@
+@namespace PortifolioBlazor.Pages.Arthur
+@page "/arthur/projetos"
+@using PortifolioBlazor.Models
+@using PortifolioBlazor.Components
+
+<PageTitle>Projetos — Arthur Couto</PageTitle>
+
+<div class="page-content">
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><i class="fas fa-code"></i> &nbsp; Meus Trabalhos</span>
+                <h1 class="section-title">Projetos <span>IFRO</span></h1>
+                <p class="section-desc">
+                    Projetos desenvolvidos durante meu curso técnico em informática no IFRO.
+                    Cada um foi uma batalha vencida na arena do código ⚔️
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Filter tags -->
+            <div style="display:flex; justify-content:center; gap:0.75rem; margin-bottom:2.5rem; flex-wrap:wrap;">
+                @foreach (var filter in filters)
+                {
+                    <button
+                        class="filter-btn @(activeFilter == filter ? "filter-active" : "")"
+                        id="filter-@filter.ToLower().Replace(" ","_")"
+                        @onclick="() => SetFilter(filter)">
+                        @filter
+                    </button>
+                }
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                @foreach (var project in FilteredProjects)
+                {
+                    <ProjectCard
+                        Title="@project.Title"
+                        Description="@project.Description"
+                        Icon="@project.Icon"
+                        Status="@project.Status"
+                        Tags="@project.Tags"
+                        GitHubUrl="@project.GitHubUrl"
+                        DemoUrl="@project.DemoUrl"
+                        Language="@project.Language" />
+                }
+            </div>
+
+            <!-- GitHub CTA -->
+            <div style="text-align:center; margin-top:3rem;">
+                <p style="color:var(--text-secondary); margin-bottom:1.25rem; font-size:0.95rem;">
+                    Em breve mais projetos chegando ao GitHub! 🚀
+                </p>
+                <a href="https://github.com/ArthurCoutoh" target="_blank" class="btn btn-secondary" id="projects-github-cta">
+                    <i class="fab fa-github"></i> Ver GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Feito com <span>❤️</span> por Arthur Couto · 2026</p>
+                <div class="footer-links">
+                    <a href="https://github.com/ArthurCoutoh" target="_blank" id="footer-github">GitHub</a>
+                    <a href="mailto:athur2075@gmail.com" id="footer-email">E-mail</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<style>
+    .filter-btn {
+        padding: 0.45rem 1.1rem;
+        border-radius: 100px;
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: var(--font-body);
+    }
+
+    .filter-btn:hover {
+        border-color: var(--color-cyan);
+        color: var(--color-cyan);
+    }
+
+    .filter-active {
+        background: rgba(0, 212, 255, 0.1);
+        border-color: var(--color-cyan);
+        color: var(--color-cyan);
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.15);
+    }
+</style>
+
+@code {
+    private string activeFilter = "Todos";
+    private List<string> filters = new() { "Todos", "C#", "Blazor", "HTML/CSS" };
+
+    private List<Project> projects = new()
+    {
+        new Project
+        {
+            Title = "Calculadora Avançada",
+            Description = "Calculadora em C# com suporte a operações básicas e avançadas, histórico de cálculos e interface de console colorida.",
+            Icon = "🔢",
+            Status = "completed",
+            Tags = new() { "Math", "Console", "C#" },
+            Language = "C#"
+        },
+        new Project
+        {
+            Title = "Melhoria do Sistema de um Cinema",
+            Description = "Projeto focado na melhoria e otimização do sistema de gerenciamento de um cinema. Controle de sessões, assentos e ingressos.",
+            Icon = "🍿",
+            Status = "progress",
+            Tags = new() { "Gestão", "C#", "OOP" },
+            Language = "C#"
+        }
+    };
+
+    private IEnumerable<Project> FilteredProjects =>
+        activeFilter == "Todos"
+            ? projects
+            : projects.Where(p => p.Tags.Any(t => t.Contains(activeFilter, StringComparison.OrdinalIgnoreCase))
+                                  || p.Language.Contains(activeFilter, StringComparison.OrdinalIgnoreCase));
+
+    private void SetFilter(string filter) => activeFilter = filter;
+}

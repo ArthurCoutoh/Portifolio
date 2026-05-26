@@ -1,0 +1,217 @@
+@namespace PortifolioBlazor.Pages.Alicy
+@page "/alicy/curriculo"
+
+<PageTitle>Currículo - Alicy Araujo</PageTitle>
+
+<div class="pg">
+    <div class="topo">
+        <span class="tag">📋 currículo</span>
+        <h1>Minhas <span>Experiências</span></h1>
+    </div>
+
+    <div class="secao">
+        <h2>🎯 Objetivo</h2>
+        <p>Atuar em uma empresa inovadora onde eu possa desenvolver minhas habilidades, adquirir novas experiências e contribuir de forma criativa e dedicada para o crescimento da equipe.</p>
+    </div>
+
+    <div class="secao">
+        <h2>🎓 Formação</h2>
+        <ul>
+            <li><strong>Ensino Médio</strong> — Em andamento · IFRO</li>
+            <li><strong>Administração e Tecnologia</strong> — Harvard University 😄</li>
+            <li><strong>Especialização em Liderança e Gestão de Projetos</strong></li>
+            <li><strong>Curso de Comunicação e Marketing Digital</strong></li>
+        </ul>
+    </div>
+
+    <div class="secao">
+        <h2>⚡ Habilidades</h2>
+        <div class="skills">
+            <span>🤝 Trabalho em equipe</span>
+            <span>💬 Comunicação</span>
+            <span>🎨 Criatividade</span>
+            <span>📅 Organização</span>
+            <span>✅ Responsabilidade</span>
+            <span>📱 Redes sociais</span>
+            <span>🧠 Aprendizado rápido</span>
+            <span>🚀 Proatividade</span>
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>🏆 Cursos & Certificações</h2>
+        <ul>
+            <li>🌟 Certificado Internacional em Liderança Jovem</li>
+            <li>💬 Inglês Fluente</li>
+            <li>💻 Informática Avançada</li>
+            <li>🎨 Design Gráfico e Edição de Imagens</li>
+            <li>💼 Empreendedorismo Digital</li>
+            <li>🎤 Desenvolvimento Pessoal e Oratória</li>
+            <li>📲 Gestão de Redes Sociais</li>
+        </ul>
+    </div>
+
+    <div class="secao">
+        <h2>🌍 Idiomas</h2>
+        <div class="idiomas">
+            <div class="idioma">
+                <span>🇧🇷 Português</span>
+                <div class="barra"><div style="width:100%; background:#ec4899;"></div></div>
+                <span>Fluente</span>
+            </div>
+            <div class="idioma">
+                <span>🇺🇸 Inglês</span>
+                <div class="barra"><div style="width:80%; background:#a855f7;"></div></div>
+                <span>Avançado</span>
+            </div>
+            <div class="idioma">
+                <span>🇪🇸 Espanhol</span>
+                <div class="barra"><div style="width:55%; background:#f97316;"></div></div>
+                <span>Intermediário</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-btns">
+        <a href="/alicy/historia" class="btn-outline">← história</a>
+        <a href="/alicy/contato" class="btn-rosa">contato 💌</a>
+    </div>
+</div>
+
+<style>
+    .pg {
+        min-height: 100vh;
+        padding: 90px 2rem 4rem;
+        font-family: 'Inter', sans-serif;
+        color: #e2e8f0;
+        background: #0b0f1c;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .topo { text-align: center; margin-bottom: 2.5rem; }
+
+    .tag {
+        display: inline-block;
+        background: #ec489918;
+        border: 1px solid #ec489955;
+        color: #f472b6;
+        border-radius: 20px;
+        padding: 0.3rem 0.9rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
+    .topo h1 {
+        font-family: 'Lilita One', cursive;
+        font-size: 2.5rem;
+    }
+
+    .topo h1 span { color: #f472b6; }
+
+    .secao {
+        background: #141828;
+        border: 1px solid #1e2a40;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .secao h2 {
+        font-size: 1.05rem;
+        color: #f1f5f9;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #1e2a40;
+    }
+
+    .secao p {
+        font-size: 0.9rem;
+        color: #64748b;
+        line-height: 1.7;
+    }
+
+    .secao ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .secao ul li {
+        font-size: 0.88rem;
+        color: #94a3b8;
+        padding: 0.5rem 0.8rem;
+        background: #0d1120;
+        border-radius: 8px;
+    }
+
+    .secao ul li strong { color: #e2e8f0; }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .skills span {
+        background: #ec489912;
+        border: 1px solid #ec489940;
+        color: #f472b6;
+        border-radius: 20px;
+        padding: 0.35rem 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .idiomas { display: flex; flex-direction: column; gap: 0.9rem; }
+
+    .idioma {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.85rem;
+        color: #94a3b8;
+    }
+
+    .idioma > span:first-child { min-width: 110px; }
+    .idioma > span:last-child  { min-width: 90px; text-align: right; color: #475569; }
+
+    .barra {
+        flex: 1;
+        height: 6px;
+        background: #1e2a40;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .barra div { height: 100%; border-radius: 4px; }
+
+    .nav-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .btn-rosa, .btn-outline {
+        padding: 0.7rem 1.6rem;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-rosa:hover, .btn-outline:hover {
+        opacity: 0.85;
+        transform: translateY(-2px);
+    }
+
+    .btn-rosa { background: #ec4899; color: white; }
+    .btn-outline { border: 2px solid #a855f7; color: #c084fc; }
+</style>

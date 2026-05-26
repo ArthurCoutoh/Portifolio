@@ -1,0 +1,156 @@
+@namespace PortifolioBlazor.Pages.Alicy
+@page "/alicy/historia"
+
+<PageTitle>Minha História - Alicy Araujo</PageTitle>
+
+<div class="pg">
+    <div class="topo">
+        <span class="tag">📖 sobre mim</span>
+        <h1>Minha <span>História</span></h1>
+    </div>
+
+    <div class="box">
+        <p class="destaque">
+            Meu nome é <strong>Alicy</strong>, tenho 16 anos e minha vida nunca foi perfeita —
+            mas cada coisa que vivi me fez crescer um pouco mais. 🌱
+        </p>
+        <p>
+            Sou uma menina sonhadora, que tenta aproveitar os momentos simples e dar valor
+            às pessoas que ama. Claro que já passei por momentos difíceis, já chorei por coisas
+            que ninguém imaginava e já precisei ser forte em situações complicadas.
+            Mas também vivi momentos felizes que guardo com muito carinho. 💛
+        </p>
+        <p>
+            Minha família sempre foi muito importante para mim, principalmente minha <strong>mãe</strong>,
+            que me ensinou a nunca desistir mesmo quando as coisas ficam difíceis.
+            Aprendi com ela que a vida é feita de fases e que tudo passa.
+        </p>
+        <p>
+            Gosto de acreditar que ainda tenho muita coisa boa para viver.
+            Tenho sonhos, metas e vontade de conquistar meu espaço no mundo.
+            Mesmo com inseguranças e desafios, continuo tentando ser uma pessoa melhor todos os dias. 💪
+        </p>
+        <p class="final">
+            Talvez eu ainda esteja descobrindo quem sou — mas sei que cada experiência
+            faz parte da minha história. ✨
+        </p>
+
+        <div class="tags-wrap">
+            <span>🌸 Sonhadora</span>
+            <span>💜 Determinada</span>
+            <span>✨ Criativa</span>
+            <span>📚 Estudiosa</span>
+            <span>💪 Resiliente</span>
+        </div>
+    </div>
+
+    <div class="nav-btns">
+        <a href="/alicy" class="btn-outline">← início</a>
+        <a href="/alicy/curriculo" class="btn-rosa">currículo 📋</a>
+    </div>
+</div>
+
+<style>
+    .pg {
+        min-height: 100vh;
+        padding: 90px 2rem 4rem;
+        font-family: 'Inter', sans-serif;
+        color: #e2e8f0;
+        background: #0b0f1c;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .topo { text-align: center; margin-bottom: 2.5rem; }
+
+    .tag {
+        display: inline-block;
+        background: #ec489918;
+        border: 1px solid #ec489955;
+        color: #f472b6;
+        border-radius: 20px;
+        padding: 0.3rem 0.9rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
+    .topo h1 {
+        font-family: 'Lilita One', cursive;
+        font-size: 2.8rem;
+    }
+
+    .topo h1 span { color: #f472b6; }
+
+    .box {
+        background: #141828;
+        border: 1px solid #ec489930;
+        border-left: 4px solid #ec4899;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .box p {
+        color: #94a3b8;
+        font-size: 0.96rem;
+        line-height: 1.8;
+        margin-bottom: 1.1rem;
+    }
+
+    .box p strong { color: #e2e8f0; }
+
+    .destaque {
+        color: #cbd5e1 !important;
+        font-size: 1.05rem !important;
+        padding: 0.8rem 1rem;
+        background: #ec489910;
+        border-radius: 8px;
+    }
+
+    .final { color: #a78bfa !important; font-style: italic; }
+
+    .tags-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid #1e2a40;
+    }
+
+    .tags-wrap span {
+        background: #ec489912;
+        border: 1px solid #ec489940;
+        color: #f472b6;
+        border-radius: 20px;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .nav-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-rosa, .btn-outline {
+        padding: 0.7rem 1.6rem;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-rosa:hover, .btn-outline:hover {
+        opacity: 0.85;
+        transform: translateY(-2px);
+    }
+
+    .btn-rosa { background: #ec4899; color: white; }
+    .btn-outline { border: 2px solid #a855f7; color: #c084fc; }
+</style>

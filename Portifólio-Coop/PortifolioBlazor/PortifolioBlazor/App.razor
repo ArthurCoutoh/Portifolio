@@ -1,0 +1,23 @@
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Página não encontrada — Portfólios Coop</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <div style="min-height:80vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;">
+                <div>
+                    <div style="font-size:5rem; margin-bottom:1rem;">✦</div>
+                    <h1 style="font-family:var(--font-title); font-size:3rem; background:linear-gradient(135deg,#8b5cf6,#00d4ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem;">404</h1>
+                    <p style="font-size:1.2rem; color:var(--text-secondary); margin-bottom:2rem;">
+                        Essa página não existe. Que tal explorar os portfólios?
+                    </p>
+                    <a href="/" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.8rem 1.8rem; background:linear-gradient(135deg,#8b5cf6,#00d4ff); color:white; border-radius:10px; font-weight:700; text-decoration:none;">
+                        🏠 Ir para o Menu
+                    </a>
+                </div>
+            </div>
+        </LayoutView>
+    </NotFound>
+</Router>

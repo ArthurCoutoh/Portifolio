@@ -1,0 +1,181 @@
+@namespace PortifolioBlazor.Pages.Alicy
+@page "/alicy"
+
+<PageTitle>Portfólio - Alicy Araujo</PageTitle>
+
+<div class="alicy-home">
+
+    <div class="hero">
+        <p class="hero-sub">Bem-vinda ao meu portfólio</p>
+        <h1>Oi, eu sou a <span>Alicy</span>!</h1>
+        <p class="hero-desc">Aqui você vai saber um pouco mais sobre mim, meu currículo e como me encontrar 💜</p>
+        <div class="hero-btns">
+            <a href="/alicy/historia" class="btn-rosa">📖 minha história</a>
+            <a href="/alicy/contato" class="btn-outline">💌 contato</a>
+        </div>
+    </div>
+
+    <div class="cards-row">
+        <a href="/alicy/historia" class="card">
+            <div class="card-num">01</div>
+            <h2>📖 Minha história</h2>
+            <p>Quem sou eu, de onde vim e o que me faz crescer.</p>
+            <span class="card-link">conhecer →</span>
+        </a>
+        <a href="/alicy/curriculo" class="card card-roxo">
+            <div class="card-num">02</div>
+            <h2>📋 Currículo</h2>
+            <p>Formação, habilidades e tudo que estou aprendendo.</p>
+            <span class="card-link">ver →</span>
+        </a>
+        <a href="/alicy/contato" class="card card-rose">
+            <div class="card-num">03</div>
+            <h2>💌 Contato</h2>
+            <p>Me manda uma mensagem, adoro conversar!</p>
+            <span class="card-link">falar →</span>
+        </a>
+    </div>
+
+    <footer>feito com 💜 por Alicy Araujo · 2026</footer>
+</div>
+
+<style>
+    .alicy-home {
+        min-height: 100vh;
+        padding: 90px 2rem 3rem;
+        font-family: 'Inter', sans-serif;
+        color: #e2e8f0;
+        background: #0b0f1c;
+    }
+
+    .hero {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    .hero-sub {
+        color: #f472b6;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+        font-family: 'Lilita One', cursive;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+        color: #f472b6;
+    }
+
+    .hero-desc {
+        color: #94a3b8;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.7;
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-rosa, .btn-outline {
+        padding: 0.7rem 1.6rem;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-rosa:hover, .btn-outline:hover {
+        opacity: 0.85;
+        transform: translateY(-2px);
+    }
+
+    .btn-rosa {
+        background: #ec4899;
+        color: white;
+    }
+
+    .btn-outline {
+        border: 2px solid #a855f7;
+        color: #c084fc;
+    }
+
+    .cards-row {
+        display: flex;
+        gap: 1.5rem;
+        max-width: 900px;
+        margin: 0 auto 4rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1 1 240px;
+        max-width: 280px;
+        background: #141828;
+        border: 1px solid #ec489940;
+        border-radius: 16px;
+        padding: 1.8rem 1.5rem;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s, border-color 0.2s;
+        position: relative;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #ec4899;
+    }
+
+    .card-roxo { border-color: #a855f740; }
+    .card-roxo:hover { border-color: #a855f7; }
+
+    .card-rose { border-color: #fb718540; }
+    .card-rose:hover { border-color: #fb7185; }
+
+    .card-num {
+        font-family: 'Lilita One', cursive;
+        font-size: 2.5rem;
+        color: #ec489920;
+        position: absolute;
+        top: 1rem;
+        right: 1.2rem;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+        color: #f1f5f9;
+    }
+
+    .card p {
+        font-size: 0.88rem;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .card-link {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #f472b6;
+    }
+
+    .card-roxo .card-link { color: #c084fc; }
+    .card-rose .card-link { color: #fb7185; }
+
+    footer {
+        text-align: center;
+        color: #334155;
+        font-size: 0.8rem;
+    }
+</style>

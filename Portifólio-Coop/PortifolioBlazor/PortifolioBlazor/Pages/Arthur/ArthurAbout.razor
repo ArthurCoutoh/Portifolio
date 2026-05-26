@@ -1,0 +1,158 @@
+@namespace PortifolioBlazor.Pages.Arthur
+@page "/arthur"
+
+<PageTitle>Sobre — Arthur Couto</PageTitle>
+
+<div class="page-content">
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><i class="fas fa-user"></i> &nbsp; Quem sou eu</span>
+                <h1 class="section-title">Sobre <span>Mim</span></h1>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Profile Card -->
+                <div class="about-card reveal">
+                    <div class="about-avatar">
+                                                <img src="img/avatar.jpg" alt="Arthur Couto" />
+                    </div>
+
+                    <h2 class="about-card-name">Arthur Couto</h2>
+                    <p class="about-card-title">Developer · Student · Fighter</p>
+
+                    <div class="about-card-details">
+                        <div class="detail-row">
+                            <i class="fas fa-calendar"></i>
+                            <span>17 anos</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-school"></i>
+                            <span>IFRO — Técnico em Informática</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rondônia, Brasil</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-envelope"></i>
+                            <span>athur2075&#64;gmail.com</span>
+                        </div>
+                        <div class="detail-row">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Brawlhalla Player 🎮</span>
+                        </div>
+                    </div>
+
+                    <div class="about-socials">
+                        <a href="https://github.com/ArthurCoutoh" target="_blank" class="social-btn" id="about-github" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:athur2075@gmail.com" class="social-btn" id="about-email" title="E-mail">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About Text -->
+                <div class="about-text reveal">
+                    <h2>Dev desde o <span>IFRO ⚔️</span></h2>
+                    <p>
+                        Olá! Sou o <strong>Arthur</strong>, um programador de 17 anos estudando no
+                        <strong>IFRO</strong> (Instituto Federal de Rondônia) no curso Técnico em Informática.
+                        Desde que entrei no instituto, me apaixonei pelo mundo do desenvolvimento de software.
+                    </p>
+                    <p>
+                        Minha linguagem principal é <strong>C#</strong>, e me especializo no ecossistema
+                        <strong>.NET e Blazor</strong>. Adoro construir aplicações que resolvem problemas reais
+                        e estou sempre aprendendo novas tecnologias para melhorar minhas habilidades.
+                    </p>
+                    <p>
+                        Fora do código, sou fã de <strong>Brawlhalla</strong> 🎮 — um jogo de luta que me ensinou
+                        que prática e determinação levam à maestria, tanto no jogo quanto na programação.
+                        Cada bug resolvido é uma vitória na arena! ⚔️
+                    </p>
+
+                    <!-- Skills -->
+                    <div class="skills-section">
+                        <p class="skills-title"><i class="fas fa-bolt"></i> &nbsp; Habilidades</p>
+                        <div class="skills-grid" id="skills-grid">
+                            <span class="skill-badge skill-csharp">
+                                <i class="fas fa-code"></i> C#
+                            </span>
+                            <span class="skill-badge skill-blazor">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Blazor.png"
+                                     alt="Blazor" style="width:16px;height:16px;" /> Blazor
+                            </span>
+                            <span class="skill-badge skill-dotnet">
+                                <i class="fas fa-layer-group"></i> .NET
+                            </span>
+                            <span class="skill-badge skill-html">
+                                <i class="fab fa-html5"></i> HTML
+                            </span>
+                            <span class="skill-badge skill-css">
+                                <i class="fab fa-css3-alt"></i> CSS
+                            </span>
+                            <span class="skill-badge skill-git">
+                                <i class="fab fa-git-alt"></i> Git
+                            </span>
+                            <span class="skill-badge skill-console">
+                                <i class="fas fa-terminal"></i> Console Apps
+                            </span>
+                            <span class="skill-badge skill-sql">
+                                <i class="fas fa-database"></i> SQL Básico
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div style="margin-top: 2rem;">
+                        <p class="skills-title"><i class="fas fa-road"></i> &nbsp; Jornada</p>
+                        <div style="display:flex; flex-direction:column; gap:1rem; padding-left:1rem; border-left: 2px solid rgba(0,212,255,0.2);">
+                            <div style="position:relative;">
+                                <div style="position:absolute; left:-1.45rem; top:0.3rem; width:10px; height:10px; border-radius:50%; background:var(--color-gold); box-shadow: 0 0 8px var(--color-gold);"></div>
+                                <p style="font-size:0.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">2024 — Presente</p>
+                                <p style="font-weight:600; color:var(--text-primary);">IFRO — Técnico em Informática</p>
+                                <p style="font-size:0.88rem; color:var(--text-secondary);">Aprendendo C#, algoritmos, banco de dados e desenvolvimento web.</p>
+                            </div>
+                            <div style="position:relative;">
+                                <div style="position:absolute; left:-1.45rem; top:0.3rem; width:10px; height:10px; border-radius:50%; background:var(--color-cyan); box-shadow: 0 0 8px var(--color-cyan);"></div>
+                                <p style="font-size:0.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">2025</p>
+                                <p style="font-weight:600; color:var(--text-primary);">Primeiros Projetos em C#</p>
+                                <p style="font-size:0.88rem; color:var(--text-secondary);">Desenvolvendo sistemas em console, algoritmos e lógica de programação.</p>
+                            </div>
+                            <div style="position:relative;">
+                                <div style="position:absolute; left:-1.45rem; top:0.3rem; width:10px; height:10px; border-radius:50%; background:var(--color-purple); box-shadow: 0 0 8px var(--color-purple);"></div>
+                                <p style="font-size:0.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">2026</p>
+                                <p style="font-weight:600; color:var(--text-primary);">Blazor WebAssembly 🚀</p>
+                                <p style="font-size:0.88rem; color:var(--text-secondary);">Explorando o ecossistema .NET moderno com Blazor e este portfólio!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; display:flex; gap:1rem;">
+                        <a href="/arthur/projetos" class="btn btn-primary" id="about-projects-btn">
+                            <i class="fas fa-code"></i> Ver Projetos
+                        </a>
+                        <a href="https://github.com/ArthurCoutoh" target="_blank" class="btn btn-secondary" id="about-github-btn">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Feito por Arthur Couto · 2026</p>
+                <div class="footer-links">
+                    <a href="https://github.com/ArthurCoutoh" target="_blank" id="footer-github">GitHub</a>
+                    <a href="mailto:athur2075@gmail.com" id="footer-email">E-mail</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
